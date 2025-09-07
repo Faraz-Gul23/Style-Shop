@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StyleShop | Modern E-commerce</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo" onclick="showPage('home')">StyleShop</a>
+            
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#" onclick="showPage('home')">Home</a></li>
+                <li><a href="#" onclick="showPage('products')">Products</a></li>
+                <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+                <li><a href="#" onclick="showPage('cart')">Cart</a></li>
+            </ul>
+            
+            <div class="header-actions">
+                <div class="cart-icon" onclick="showPage('cart')">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Home Page -->
+    <div id="home" class="page active">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>Summer Collection 2025</h1>
+                <p>Discover the latest trends in fashion and lifestyle. Get up to 50% off on selected items.</p>
+                <a href="#" class="btn" onclick="showPage('products')">Shop Now</a>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section>
+            <div class="container">
+                <div class="section-title">
+                    <h2>Shop by Category</h2>
+                    <p>Browse our wide range of categories</p>
+                </div>
+                
+                <div class="category-grid">
+                    <div class="category-card" onclick="showPage('products')">
+                        <div class="category-img1 ">
+                            <i class="fas fa-tshirt"></i>
+                        </div>
+                        <div class="category-info">
+                            <h3>Clothing</h3>
+                            <p>Latest fashion trends</p>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card" onclick="showPage('products')">
+                        <div class="category-img2">
+                            <i class="fas fa-shoe-prints"></i>
+                        </div>
+                        <div class="category-info">
+                            <h3>Footwear</h3>
+                            <p>Shoes & sneakers</p>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card" onclick="showPage('products')">
+                        <div class="category-img3">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <div class="category-info">
+                            <h3>Accessories</h3>
+                            <p>Watches & jewelry</p>
+                        </div>
+                    </div>
+                    
+                    <div class="category-card" onclick="showPage('products')">
+                        <div class="category-img4">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                        <div class="category-info">
+                            <h3>Electronics</h3>
+                            <p>Gadgets & devices</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section>
+            <div class="container">
+                <div class="section-title">
+                    <h2>Featured Products</h2>
+                    <p>Our most popular products this season</p>
+                </div>
+                
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="Classic White T-Shirt.jpeg" alt="Product 1">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Classic White T-Shirt</h3>
+                            <p class="product-desc">Premium quality cotton t-shirt for everyday wear.</p>
+                            <div class="product-price">$29.99</div>
+                            <button class="add-to-cart" onclick="addToCart('Classic White T-Shirt', 29.99)">Add to Cart</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="Slim Fit Jeans.jpeg" alt="Product 2">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Slim Fit Jeans</h3>
+                            <p class="product-desc">Comfortable and stylish denim jeans.</p>
+                            <div class="product-price">$49.99</div>
+                            <button class="add-to-cart" onclick="addToCart('Slim Fit Jeans', 49.99)">Add to Cart</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="Leather Sneakers.jpeg" alt="Product 3">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Leather Sneakers</h3>
+                            <p class="product-desc">Premium leather sneakers for all occasions.</p>
+                            <div class="product-price">$89.99</div>
+                            <button class="add-to-cart" onclick="addToCart('Leather Sneakers', 89.99)">Add to Cart</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="Smart Watch.jpeg" alt="Product 4">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Smart Watch</h3>
+                            <p class="product-desc">Track your fitness and receive notifications.</p>
+                            <div class="product-price">$199.99</div>
+                            <button class="add-to-cart" onclick="addToCart('Smart Watch', 199.99)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter">
+            <div class="container">
+                <h2>Subscribe to our Newsletter</h2>
+                <p>Get updates on new products and special offers</p>
+                <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+                    <input type="email" class="newsletter-input" placeholder="Enter your email" required>
+                    <button type="submit" class="newsletter-btn">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <!-- Products Page -->
+    <div id="products" class="page">
+        <section>
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Products</h2>
+                    <p>Browse our complete collection</p>
+                </div>
+                
+                <div class="filters">
+                    <div class="filter-header">
+                        <h3>Filters</h3>
+                    </div>
+                    <div class="filter-options">
+                        <div class="filter-group">
+                            <select>
+                                <option>All Categories</option>
+                                <option>Clothing</option>
+                                <option>Footwear</option>
+                                <option>Accessories</option>
+                                <option>Electronics</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <select>
+                                <option>Price: Low to High</option>
+                                <option>Price: High to Low</option>
+                                <option>Most Popular</option>
+                                <option>Newest First</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <select>
+                                <option>All Sizes</option>
+                                <option>XS</option>
+                                <option>S</option>
+                                <option>M</option>
+                                <option>L</option>
+                                <option>XL</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="Classic White T-Shirt.jpeg" alt="Product 1">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Classic White T-Shirt</h3>
+                            <p class="product-desc">Premium quality cotton t-shirt for everyday wear.</p>
+                            <div class="product-price">$29.99</div>
+                            <button class="add-to-cart" onclick="addToCart('Classic White T-Shirt', 29.99)">Add to Cart</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="Slim Fit Jeans.jpeg" alt="Product 2">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Slim Fit Jeans</h3>
+                            <p class="product-desc">Comfortable and stylish denim jeans.</p>
+                            <div class="product-price">$49.99</div>
+                            <button class="add-to-cart" onclick="addToCart('Slim Fit Jeans', 49.99)">Add to Cart</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="Leather Sneakers.jpeg" alt="Product 3">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Leather Sneakers</h3>
+                            <p class="product-desc">Premium leather sneakers for all occasions.</p>
+                            <div class="product-price">$89.99</div>
+                            <button class="add-to-cart" onclick="addToCart('Leather Sneakers', 89.99)">Add to Cart</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="Smart Watch.jpeg" alt="Product 4">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Smart Watch</h3>
+                            <p class="product-desc">Track your fitness and receive notifications.</p>
+                            <div class="product-price">$199.99</div>
+                            <button class="add-to-cart" onclick="addToCart('Smart Watch', 199.99)">Add to Cart</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="Winter Jacket.jpeg" alt="Product 5">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Winter Jacket</h3>
+                            <p class="product-desc">Stay warm with our premium winter jacket.</p>
+                            <div class="product-price">$129.99</div>
+                            <button class="add-to-cart" onclick="addToCart('Winter Jacket', 129.99)">Add to Cart</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="Backpack.jpeg" alt="Product 6">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Backpack</h3>
+                            <p class="product-desc">Durable and spacious backpack for everyday use.</p>
+                            <div class="product-price">$59.99</div>
+                            <button class="add-to-cart" onclick="addToCart('Backpack', 59.99)">Add to Cart</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="Wireless Headphones.jpeg" alt="Product 7">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Wireless Headphones</h3>
+                            <p class="product-desc">High-quality sound with noise cancellation.</p>
+                            <div class="product-price">$149.99</div>
+                            <button class="add-to-cart" onclick="addToCart('Wireless Headphones', 149.99)">Add to Cart</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">
+                            <img src="Sunglasses.jpeg" alt="Product 8">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Sunglasses</h3>
+                            <p class="product-desc">Protect your eyes in style with our sunglasses.</p>
+                            <div class="product-price">$79.99</div>
+                            <button class="add-to-cart" onclick="addToCart('Sunglasses', 79.99)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Product Detail Page -->
+    <div id="product-detail" class="page">
+        <section>
+            <div class="container">
+                <div class="product-detail">
+                    <div class="product-gallery">
+                        <div class="main-image">
+                            <img src="https://via.placeholder.com/500" alt="Product Main Image" id="mainImage">
+                        </div>
+                        <div class="thumbnails">
+                            <div class="thumbnail" onclick="changeImage('https://via.placeholder.com/500')">
+                                <img src="https://via.placeholder.com/100" alt="Thumbnail 1">
+                            </div>
+                            <div class="thumbnail" onclick="changeImage('https://via.placeholder.com/500/ff0000')">
+                                <img src="https://via.placeholder.com/100/ff0000" alt="Thumbnail 2">
+                            </div>
+                            <div class="thumbnail" onclick="changeImage('https://via.placeholder.com/500/0000ff')">
+                                <img src="https://via.placeholder.com/100/0000ff" alt="Thumbnail 3">
+                            </div>
+                            <div class="thumbnail" onclick="changeImage('https://via.placeholder.com/500/00ff00')">
+                                <img src="https://via.placeholder.com/100/00ff00" alt="Thumbnail 4">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-detail-info">
+                        <h1 id="detailTitle">Classic White T-Shirt</h1>
+                        <div class="product-price-large" id="detailPrice">$29.99</div>
+                        <div class="product-description">
+                            <p>Our premium white t-shirt is made from 100% organic cotton for maximum comfort. Perfect for everyday wear, this classic fit t-shirt features a modern cut that flatters all body types.</p>
+                            <p>Features:</p>
+                            <ul>
+                                <li>100% organic cotton</li>
+                                <li>Machine washable</li>
+                                <li>Available in sizes S-XXL</li>
+                                <li>Classic fit</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="quantity-selector">
+                            <button class="quantity-btn" onclick="decreaseQuantity()">-</button>
+                            <input type="number" class="quantity-input" id="quantity" value="1" min="1">
+                            <button class="quantity-btn" onclick="increaseQuantity()">+</button>
+                        </div>
+                        
+                        <button class="btn add-to-cart-lg" onclick="addDetailToCart()">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Related Products -->
+        <section>
+            <div class="container">
+                <div class="section-title">
+                    <h2>Related Products</h2>
+                    <p>You might also like</p>
+                </div>
+                
+                <div class="product-grid">
+                    <div class="product-card" onclick="showProductDetail('Slim Fit Jeans', 49.99)">
+                        <div class="product-img">
+                            <img src="https://via.placeholder.com/300" alt="Related Product 1">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Slim Fit Jeans</h3>
+                            <p class="product-desc">Comfortable and stylish denim jeans.</p>
+                            <div class="product-price">$49.99</div>
+                            <button class="add-to-cart" onclick="event.stopPropagation(); addToCart('Slim Fit Jeans', 49.99)">Add to Cart</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card" onclick="showProductDetail('Leather Sneakers', 89.99)">
+                        <div class="product-img">
+                            <img src="https://via.placeholder.com/300" alt="Related Product 2">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Leather Sneakers</h3>
+                            <p class="product-desc">Premium leather sneakers for all occasions.</p>
+                            <div class="product-price">$89.99</div>
+                            <button class="add-to-cart" onclick="event.stopPropagation(); addToCart('Leather Sneakers', 89.99)">Add to Cart</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card" onclick="showProductDetail('Backpack', 59.99)">
+                        <div class="product-img">
+                            <img src="https://via.placeholder.com/300" alt="Related Product 3">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Backpack</h3>
+                            <p class="product-desc">Durable and spacious backpack for everyday use.</p>
+                            <div class="product-price">$59.99</div>
+                            <button class="add-to-cart" onclick="event.stopPropagation(); addToCart('Backpack', 59.99)">Add to Cart</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card" onclick="showProductDetail('Sunglasses', 79.99)">
+                        <div class="product-img">
+                            <img src="https://via.placeholder.com/300" alt="Related Product 4">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Sunglasses</h3>
+                            <p class="product-desc">Protect your eyes in style with our sunglasses.</p>
+                            <div class="product-price">$79.99</div>
+                            <button class="add-to-cart" onclick="event.stopPropagation(); addToCart('Sunglasses', 79.99)">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Cart Page -->
+    <div id="cart" class="page">
+        <section>
+            <div class="container">
+                <div class="section-title">
+                    <h2>Your Cart</h2>
+                    <p>Review your items</p>
+                </div>
+                
+                <div class="cart-container">
+                    <div class="cart-items" id="cartItems">
+                        <!-- Cart items will be dynamically inserted here -->
+                    </div>
+                    
+                    <div class="cart-summary">
+                        <h3>Order Summary</h3>
+                        
+                        <div class="summary-item">
+                            <span>Subtotal</span>
+                            <span id="cartSubtotal">$0.00</span>
+                        </div>
+                        
+                        <div class="summary-item">
+                            <span>Shipping</span>
+                            <span id="cartShipping">$0.00</span>
+                        </div>
+                        
+                        <div class="summary-item">
+                            <span>Tax</span>
+                            <span id="cartTax">$0.00</span>
+                        </div>
+                        
+                        <div class="summary-total">
+                            <span>Total</span>
+                            <span id="cartTotal">$0.00</span>
+                        </div>
+                        
+                        <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact Page -->
+    <div id="contact" class="page">
+        <section>
+            <div class="container">
+                <div class="section-title">
+                    <h2>Contact Us</h2>
+                    <p>Get in touch with our team</p>
+                </div>
+                
+                <div class="contact-container">
+                    <div class="contact-form">
+                        <form id="contactForm" onsubmit="submitContactForm(event)">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" class="form-control" placeholder="Your name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" class="form-control" placeholder="Your email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" class="form-control" placeholder="Subject" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" class="form-control" placeholder="Your message" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn">Send Message</button>
+                        </form>
+                    </div>
+                    
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.62146185536!2d-74.0059493845942!3d40.71278267932692!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a23c7ad6e0f%3A0x87d658c2d68ecc49!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1622545713981!5m2!1sen!2s" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>StyleShop</h3>
+                    <p>Your one-stop shop for all fashion needs. Quality products at affordable prices.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" onclick="showPage('home')">Home</a></li>
+                        <li><a href="#" onclick="showPage('products')">Products</a></li>
+                        <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+                        <li><a href="#" onclick="showPage('cart')">Cart</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Customer Service</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">Shipping Information</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 StyleShop. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js">
+    </script>
+</body>
+</html>
